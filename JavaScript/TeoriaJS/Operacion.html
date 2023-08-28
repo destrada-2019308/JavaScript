@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" >
+    <title>Document</title>
+    <style>
+        h1 {
+            color: #fff;
+            font-size: 20;
+        }
+        p {
+            color: #fff;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .p-num2{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+    <script>
+        function Suma() {
+            valor1 = num1.value *1;
+            valor2 = num2.value *1;
+            result = valor1 + valor2;
+            num3.value = result
+        }
+    </script>
+</head>
+<body bgcolor="gray">
+    <center>
+        <h1> Suma de valores </h1>
+        <br>
+        <p class="p-num1"> Ingrese un número </p>
+        <input type="text" id="num1">
+        <br>
+        <br>
+        <p class="p-num2"> Ingrese otro número </p>
+        <input type="text" id="num2">
+        <br>
+        <br>
+        <input type="button" value="Presionar" onclick="Suma()">
+        <br>
+        <br>
+        <input type="text" id="num3" >
+
+    </center>
+    
+</body>
+</html>
