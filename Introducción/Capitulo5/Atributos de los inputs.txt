@@ -1,0 +1,23 @@
+Atributos de inputs
+
+sintaxis
+    input.nombreDelMetodo
+
+className
+
+value
+    valor del input
+
+type = ""
+
+accept = ""
+
+form
+
+minLength
+
+placeholder = ""
+
+required = ""
+    campo requerido 
+

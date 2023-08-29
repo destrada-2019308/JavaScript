@@ -1,0 +1,22 @@
+sintaxis
+titulo.classList.elemento()
+
+add() 
+    añade una clase
+
+remove() 
+    elimina una clase
+
+item()
+    devuelve la clase del inice especificado
+
+contains() 
+    verifica si ese elemento posee o no la clase especificada
+
+replace()
+    reemplaza la clase por otra
+
+toggle()
+    si no tiene la clase especificada, la agrega, si la tiene 
+    la elimina
+    

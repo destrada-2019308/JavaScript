@@ -1,0 +1,67 @@
+ Metodos de cadenas
+
+ concat();
+ junta dos o mas cadenas y retorna una nueva
+
+ startsWith();
+si una cadena comienza con los carateres de otra cadena 
+devuelve true, sino devuelve false
+
+ endsWith();
+si una cadena termina con los carateres de otra cadena
+devuelve true, sino devuelve false
+
+ includes();
+ si una cadena puede encontarse dentro de otra cadena, 
+ devuelve true, sino devuelve false.
+
+ indexOf();
+ devuelve el indice del primer caracter de la cadena, 
+ devuelve la posicion en donde la encuentre 
+ si no existe devuelve -1
+
+ lastIndexOf()
+ devuelve el indice del ultimo carater de la cadena,
+ en la ultima coincidencia 
+ si no existe devuelve -1
+
+ padStart()
+ Rellena la cadena al principio con los carateres deseados
+        se le da como primer parametro cuantos caracteres 
+        se le quiere poner y el segundo con que la rellenamos 
+.padStart(ndecaracteres, "relleno" );
+
+padEnd()
+hace lo mismo que padStart pero lo rellena alreves
+
+repeat()
+devuelve la misma cadena pero repetida la cantidad de veces que le 
+digamos
+
+split()
+divide la cadena como le digamos
+
+substring()
+nos devuelve lo que seleccionamos
+
+se le meten 2 parametros
+    el primero desde donde empieza
+    y el segundo hasta donde va ha terminar sin tomarlo en cuenta
+.substring(0,2);
+
+toLowerCase()
+convierte una cadena a minusculas
+
+toUpperCase()
+convierte una cadena a mayusculas
+
+trim()
+elimina los espacios en blanco
+
+trimEnd()
+
+trimStart()
+
+Propiedad
+.length
+cuenta los caracteres del string

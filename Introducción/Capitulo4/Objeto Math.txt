@@ -1,0 +1,37 @@
+sintaxis
+
+let objeto = Math.metodo()
+
+sqrt();
+raiz cuadrada
+
+cbrt();
+raiz cubica 
+
+max()
+devuelve el numero mas grande
+
+min()
+devuelve el numero mas pequeño
+
+random()
+
+round()
+redondea
+
+floor()
+devuelve un entero
+
+fround()
+
+trunc()
+elimina los decimales 
+
+PI
+es PI
+
+SQRT1_2
+
+SQRT2
+
+

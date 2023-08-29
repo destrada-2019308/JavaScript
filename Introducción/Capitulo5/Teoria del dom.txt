@@ -1,0 +1,20 @@
+Document - Métodos de Selección de elementos
+
+getElementById() - Selecciona elemento por ID
+
+getElementsByTagName - Selecciona el elemento por el name
+
+querySelector() - Devuelve el primer elemento que conicida
+con el grupo especificado de selectores
+
+querySelectorAll() - Devuelve el todos elemento que conicida
+con el grupo especificado de selectores
+
+Métodos para definir, obtener y eliminar valores de atributos
+
+setAttribute() - Modifica el valor de un atributo
+
+getAttribute() - Obtien el valor de un atributo
+
+removeAttribute() - elimina el valor del atributo
+

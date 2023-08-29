@@ -1,0 +1,57 @@
+-- ------------------------- Métodos Transformadores ----------------------------
+pop()
+elimina el último elemento del array y lo devuelve
+
+shift()
+elimina el primer elemento del array y lo devuelve
+
+push()
+agrega un elemento al array al final de la lista
+devuelve la posicion a la que lo añadio
+
+reverse()
+invierte el orden de los elementos del array
+
+unshift()
+agrega uno o mas elemento al inicio del array y 
+devuelve la longitud.
+
+sort()
+ordena los elemento del array localmente
+y devuelve el arreglo ordenado
+
+ordena numericamente o alfabeticamente el arreglo
+
+splice()
+cambia el contenido de un array eliminando elementos
+existentes y/o agregando nuevos elementos
+
+primer parametro de donde arranca
+    posicion, elementos a eliminar, agrega nuevos elementos 
+splice(1, 3, "nuevo elemento");
+
+-- ------------------------- Métodos Accesores ----------------------------
+join()
+une todo los elementos de una matriz en una cadena y la devuelve 
+
+let result = cadena.join("un tipo de separador");
+
+slice()
+devuelve una parte del array dentro de un nuevo array empezando
+por inicio hasta fin (fin no incluido)
+es como el substring()
+
+necesita 2 parametros
+
+slice(0,1)
+para seleccionar todos los elementos del array solo se le deja vacio 
+slice(0)
+
+-- ------------------------- Métodos De Repetición ----------------------------
+filter()
+crea un nuevo array con todos los elementos que cumplan la condicion
+recibe como parametro una funcion
+
+forEach()
+ejecuta la funcion indicada una ver por cada elemento del array 
+
