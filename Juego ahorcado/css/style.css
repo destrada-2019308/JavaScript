@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container{
+    width: 850px;
+    background-color: #fff;
+    display: flex;
+    gap: 80px;
+    align-items: flex-end;
+    padding: 60px 40px;
+    border-radius: 10px;
+}
+
+.ahorcado-box{
+    max-width: 270px;
+}
+
+.ahorcado-box h1{
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.palabra-ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.palabra-ul .palabra{
+    width: 30px;
+    font-size: 2rem;
+    text-align: center  ;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #000;
+}
+
+.game-box h4 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+.game-box h4 b{
+    font-weight: 700;
+    color: #f00;
+}
+
+.game-box .teclado {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game-box .teclado button{
+    /*Este calculo sirve para 
+    darle una separación a los botones
+    100% para que ocupen todo el ancho del 
+    contenedor que lo ocupa, /10 para 
+    separarlo en 10 columnas y -5px
+    para darle un tipo de separacion entre ellos*/
+    color: #fff;
+    font-size: 1rem;
+    font-weight: normal;
+    cursor: pointer;
+    background: #999;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: none;
+    transition-duration: .7s;
+    padding: 8px;
+    width: calc(100%/10 - 5px);
+}
+
+.game-box .teclado button:hover{
+    background-color: #453c3c;
+    transition-duration: .5s;
+}
+
+.perdiste{
+    position: fixed;    
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.perdiste .contenido{
+    background-color: #fff;
+    max-width: 430px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.perdiste h4{
+    font-size: 1.5rem;
+
+}
+
+.perdiste p{
+    font-size: 1rem;
+    margin: 15px 0 30px 0;
+    font-weight: lighter;
+}
+
+.perdiste p b{
+    color: #48ab;
+    font-weight: bold;
+}
+
+.perdiste button{
+    padding: 10px 15px;
+}
+
+@media screen and (max-width: 670px) {
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ahorcado-box h1{
+        display: none;
+    }
+
+}
