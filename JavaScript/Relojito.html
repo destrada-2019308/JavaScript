@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>El Reloj</title>
+    <script>
+        function reloj(){
+            cajita.value = Date()
+            document.title = Date()
+            window.status = Date()
+            
+            hora.innerHTML = Date()
+            big.innerHTML = Date()
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="cajita">
+    <br>
+    <br>
+    <script> setTimeout("reloj()", 1)</script>
+    <p id="hora">Son las: </p>
+    <h1 id="big" size="100" style="font-size: 80; color: #aaaabb;">HOLI</h1>
+</body>
+</html>

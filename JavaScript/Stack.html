@@ -8,14 +8,50 @@
         //====================================================================================
         //                  INICIO DECLARACIÓN DEL OBJETO STACK                             //
         //====================================================================================
+
+        //Se creará un objeto equivalente a una CLASS -- Usando el operador this
+        //y el constructor
+        function stack() {
+            this.data = new Array();
+            this.stackpointer = 0;
+            this.push = push;
+            this.pop  = pop;
+            window.status = "Constructor";
+        }
+        //Declara los métodos para el uso del Stack
+        function push(x) {
+            if(this.stackpointer < 10){
+                this.data[this.stackpointer++] = x;
+            }else{
+                alert("Stack Overflow");
+            }
+        }
+
+        function pop() {
+            if(this.stackpointer > 0){
+                return (this.data[--this.stackpointer])
+            }else{
+                alert("Stack Underflow");
+            }
+        }
+
+        //=====================================================================================
+        //                      FIN DE LA DECLARACIÓN DEL OBJETO                             //
+        //=====================================================================================
+
+        //INSTANCIAR UN OBJETO DE TIPO STACK
+
+        var a = new stack();
+
     </script>
 </head>
 <body bgcolor="#000080" text="FFFFFF">
     <center><h1>Manejo de Stack</h1></center>
     <br>
     <br>
-    <input type="button" value="push-->" onclick="">
+    <input type="button" value="push-->" onclick="a.push(num.value); num.value=' ' ">
     <input type="text" id="num">
-    <input type="button" value="<--pop" onclick="">
+    <input type="button" value="<--pop" onclick="num.value = a.pop()">
+
 </body>
 </html>

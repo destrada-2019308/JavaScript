@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport">
+    <title>Triángulo Pascal</title>
+    <script>
+        function mostrar() {
+            valor = n.value * 1;
+            vec=[];
+            for( let i = -1; i<valor*2;i++){
+                vec[i] = 0;
+            }
+            vec[valor] = 1;
+            for(let i = 0; i<valor; i++){
+                text = "  ";
+                for (let j = valor-i-1; j <valor+1; j=j+2) {
+                    vec[j] = vec[j-1] + vec[j+1]
+                    text = (text + '&nbsp;' + vec[j] + '&nbsp;')
+                }
+                document.write(`<center> ${text} </center>`);
+            }
+        }
+    </script>
+</head>
+<body bgcolor="#f82">
+    <center>
+        <input type="text" id="n">
+        <br>
+        <input type="button" name="" id="" value="Push xD" onclick="mostrar()">
+    </center>                    
+
+</body>
+</html>
