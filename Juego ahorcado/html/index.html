@@ -7,66 +7,69 @@
         con html, css y js.">
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js" defer></script>
     <title>Ahorcado JavaScript</title>
 </head>
 <body>
     <div class="perdiste">
         <div class="contenido">
             <h4>Game Over</h4>
-            <p>La palabra correcta era: <b>palabra</b></p>
-            <button class="volver-jugar">Volver a jugar</button>
+            <p>La palabra correcta era: <b id="palabraCorrecta"></b></p>
+            <button class="volver-jugar" onclick="volverJugar()">Volver a jugar</button>
         </div>
     </div>
+     <div class="ganaste">
+        <div class="contenido">
+            <h4>¡¡You winner!!</h4>
+            <button class="volver-jugar" onclick="volverJugar()">Volver a jugar</button>
+        </div>
+    </div>
+    
     <div class="container">
         <div class="game-box">
+            <p class="palabrasUsadas">Palabras usadas:</p>
+            <div id="contador">
+            </div>
             <ul class="palabra-ul">
-                <li class="palabra"></li>
-                <li class="palabra"></li>
-                <li class="palabra"></li>
-                <li class="palabra"></li>
-                <li class="palabra"></li>
-                <li class="palabra"></li>
-                <li class="palabra"></li>
             </ul>
             <div class="teclado">
-                <button>a</button>
-                <button>b</button>
-                <button>c</button>
-                <button>d</button>
-                <button>e</button>
-                <button>f</button>
-                <button>g</button>
-                <button>h</button>
-                <button>i</button>
-                <button>j</button>
-                <button>k</button>
-                <button>l</button>
-                <button>m</button>
-                <button>n</button>
-                <button>ñ</button>
-                <button>o</button>
-                <button>p</button>
-                <button>q</button>
-                <button>r</button>
-                <button>s</button>
-                <button>t</button>
-                <button>u</button>
-                <button>v</button>
-                <button>w</button>
-                <button>x</button>
-                <button>y</button>
-                <button>z</button>
+                <button id="a" class="boton-letra">a</button>
+                <button id="b" class="boton-letra">b</button>
+                <button id="c" class="boton-letra">c</button>
+                <button id="d" class="boton-letra">d</button>
+                <button id="e" class="boton-letra">e</button>
+                <button id="f" class="boton-letra">f</button>
+                <button id="g" class="boton-letra">g</button>
+                <button id="h" class="boton-letra">h</button>
+                <button id="i" class="boton-letra">i</button>
+                <button id="j" class="boton-letra">j</button>
+                <button id="k" class="boton-letra">k</button>
+                <button id="l" class="boton-letra">l</button>
+                <button id="m" class="boton-letra">m</button>
+                <button id="n" class="boton-letra">n</button>
+                <button id="ñ" class="boton-letra">ñ</button>
+                <button id="o" class="boton-letra">o</button>  
+                <button id="p" class="boton-letra">p</button>
+                <button id="q" class="boton-letra">q</button>
+                <button id="r" class="boton-letra">r</button>
+                <button id="s" class="boton-letra">s</button>
+                <button id="t" class="boton-letra">t</button>
+                <button id="u" class="boton-letra">u</button>
+                <button id="v" class="boton-letra">v</button>
+                <button id="w" class="boton-letra">w</button>
+                <button id="x" class="boton-letra">x</button>
+                <button id="y" class="boton-letra">y</button>
+                <button id="z" class="boton-letra">z</button>
             </div>
         </div>
         <div class="ahorcado-box">
-            canvas
+            <canvas id="canvas"></canvas>
             <h1>Juego Ahorcado</h1>
         <br>
         <div class="game-box">
             <h4 class="incorrecto">
                 Palabras Incorrectas
-                <b>0 / 7</b>
+                <b id="intentos"> 0</b><b> / 7</b>
             </h4>
         </div>
         </div>

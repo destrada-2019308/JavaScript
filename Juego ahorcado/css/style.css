@@ -95,6 +95,27 @@ body{
     transition-duration: .5s;
 }
 
+#contador{
+    position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    top: 35%;
+    left: 32%;
+}
+
+.palabrasUsadas{
+    position: absolute;
+    top: 31%;
+    left: 28%;
+    color: #6086a8;
+}
+
+.disable {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 .perdiste{
     position: fixed;    
     left: 0;
@@ -105,6 +126,61 @@ body{
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ganaste{
+    position: fixed;    
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ganaste .contenido{
+    background-color: #fff;
+    max-width: 430px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.entrar{
+    position: fixed;    
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ganaste h4{
+    font-size: 1.5rem;
+}
+
+.ganaste button{
+    background-color: #7c7c7c;
+    margin-top: 10px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition-duration: .5s;
+}
+
+.ganaste button:hover{
+    background-color: #65727c;
+    transform: scale(1.2);
+    transition-duration: .5s;
 }
 
 .perdiste .contenido{
@@ -122,18 +198,32 @@ body{
 }
 
 .perdiste p{
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 15px 0 30px 0;
     font-weight: lighter;
 }
 
 .perdiste p b{
+    font-size: 1.4rem;
     color: #48ab;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .perdiste button{
+    background-color: #7c7c7c;
+    border: none;
+    color: #fff;
+    cursor: pointer;
     padding: 10px 15px;
+    border-radius: 10px;
+    transition-duration: .5s;
+}
+
+.perdiste button:hover{
+    background-color: #65727c;
+    transform: scale(1.2);
+    transition-duration: .5s;
 }
 
 @media screen and (max-width: 670px) {
