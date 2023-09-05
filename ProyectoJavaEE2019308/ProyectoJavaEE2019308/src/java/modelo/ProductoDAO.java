@@ -35,4 +35,26 @@ public class ProductoDAO {
         }
         return listaProducto;
     }
+    
+    //Listar por código
+    public Producto listarCodigoProducto(int id){
+        //Instanciar un objeto de tipo Producto
+        Producto prod = new Producto();
+        String sql = "select * from Producto where codigoProducto = " +id;
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                prod.setCodigoProducto(rs.getInt(1));
+                prod.setNombreProducto(rs.getString(2));
+                prod.setPrecio(rs.getDouble(3));
+                prod.setStock(rs.getInt(4));
+                prod.setEstado(rs.getString(5));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return prod;
+    }
 }

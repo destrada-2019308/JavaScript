@@ -25,11 +25,11 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6.5 d-flex">
-                                    <input type="text" name="txtCodigoCliente" value="" class="form-control" placeholder="Código">
+                                    <input type="text" name="txtCodigoCliente" value="${cliente.getDPICliente()}" class="form-control" placeholder="Código">
                                     <input type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info" >
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" name="txtNombresCliente" value="" class="form-control">
+                                    <input type="text" name="txtNombresCliente" value="${cliente.getNombresCliente()}" class="form-control">
                                 </div>
                             </div>
                             <!-- FORMULARIO PRODUCTO -->
@@ -38,22 +38,22 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="txtCodigoProducto" value="" class="form-control" placeholder="Producto" >
+                                    <input type="text" name="txtCodigoProducto" value="${producto.getCodigoProducto()}" class="form-control" placeholder="Producto" >
                                     <button type="submit" name="accion" value="BuscarProducto" class="btn-outline-info">Buscar</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" name="txtNombreProducto" class="form-control" placeholder="Producto">
+                                    <input type="text" name="txtNombreProducto" value="${producto.getNombreProducto()}" class="form-control" placeholder="Producto">
                                 </div>
                             </div>
                             <div class="form-group d-flex"> 
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="txtPrecio" value="" class="form-control" placeholder="Q.00.00">
+                                    <input type="text" name="txtPrecio" value="${producto.getPrecio()}" class="form-control" placeholder="Q.00.00">
                                 </div>
                                 <div class="col-sm-3"> 
                                     <input type="text" name="txtCantidad" value="1" class="form-control">
                                 </div>
                                 <div>
-                                    <input type="text" name="txtStock" value="" class="form-control" placeholder="Stock">
+                                    <input type="text" name="txtStock" value="${producto.getStock()}" class="form-control" placeholder="Stock">
                                 </div>
                             </div>
                             <!-- AGREGAR REGISTRO -->
@@ -86,18 +86,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <c:forEach var="list" items="${lista}">
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>${list.getItem()}</td>
+                                    <td>${list.getCodigoProducto()}</td>
+                                    <td>${list.getDescripcionProd()}</td>
+                                    <td>${list.getPrecio()}</td>
+                                    <td>${list.getCantidad()}</td>
+                                    <td>${list.getSubTotal()}</td>
                                     <td class="d-flex">
                                         <a href="#" class="btn btn-danger" style="margin-left: 10px">Eliminar</a>
                                     </td>
                                 </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
@@ -107,7 +108,7 @@
                             <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
                         </div>
                         <div class="col-sm-6 mi-auto">
-                            <input type="text" name="txtTotal" value="Q." class="form-control">
+                            <input type="text" name="txtTotal" value="Q.${totalPagar}" class="form-control">
                         </div>
                     </div>
                 </div>

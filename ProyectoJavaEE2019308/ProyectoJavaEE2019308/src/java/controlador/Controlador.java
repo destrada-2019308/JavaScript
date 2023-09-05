@@ -7,13 +7,19 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Cliente;
+import modelo.ClienteDAO;
 import modelo.Empleado;
 import modelo.EmpleadoDAO;
+import modelo.Producto;
+import modelo.ProductoDAO;
+import modelo.Venta;
 
 /**
  *
@@ -21,8 +27,21 @@ import modelo.EmpleadoDAO;
  */
 public class Controlador extends HttpServlet {
     EmpleadoDAO empleadoDao = new EmpleadoDAO();
-    Empleado empleado = new Empleado();
+    Empleado empleado= new Empleado();
+    Cliente cliente = new Cliente();
+    ClienteDAO clienteDao = new ClienteDAO();
+    Producto producto = new Producto();
+    ProductoDAO productoDao = new ProductoDAO();
+    Venta venta = new Venta();
+    List<Venta> lista = new ArrayList();
     int codEmpleado;
+    int codigoCliente;
+    int codigoProducto;
+    int item = 0;
+    int canti;
+    String descripcion;
+    double precio, subTotal;
+    double totalPagar;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
@@ -90,6 +109,45 @@ public class Controlador extends HttpServlet {
             }
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
         }else if(menu.equals("NuevaVenta")){
+            switch(accion){
+                case "BuscarCliente":
+                    String dpi = request.getParameter("txtCodigoCliente");
+                    cliente.setDPICliente(dpi);
+                    cliente = clienteDao.buscar(dpi);
+                    request.setAttribute("cliente", cliente);
+                    break;
+                case "BuscarProducto":
+                    codigoProducto = Integer.parseInt(request.getParameter("txtCodigoProducto"));
+                    producto = productoDao.listarCodigoProducto(codigoProducto);
+                    request.setAttribute("producto", producto);
+                    request.setAttribute("lista", lista);
+                    request.setAttribute("totalPagar", totalPagar);
+                    request.setAttribute("cliente", cliente);
+                    break;
+                case "Agregar":
+                    request.setAttribute("cliente", cliente);
+                    totalPagar = 0.0;
+                    item = item + 1;
+                    codigoProducto = producto.getCodigoProducto();
+                    descripcion = request.getParameter("txtNombreProducto");
+                    precio = Double.parseDouble(request.getParameter("txtPrecio"));
+                    canti = Integer.parseInt(request.getParameter("txtCantidad"));
+                    subTotal = precio * canti;
+                    venta = new Venta();
+                    venta.setItem(item);
+                    venta.setCodigoProducto(codigoProducto);
+                    venta.setDescripcionProd(descripcion);
+                    venta.setPrecio(precio);
+                    venta.setCantidad(canti);
+                    venta.setSubTotal(subTotal);
+                    lista.add(venta);
+                    for(int i = 0; i <lista.size(); i++){
+                        totalPagar = totalPagar +lista.get(i).getSubTotal();
+                    }
+                    request.setAttribute("totalPagar", totalPagar);
+                    request.setAttribute("lista", lista);
+                    break;
+            }
             request.getRequestDispatcher("NuevaVenta.jsp").forward(request, response);
         }
     }
